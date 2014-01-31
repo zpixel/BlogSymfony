@@ -1,0 +1,25 @@
+blog_accueil:
+    pattern:  /{page}
+    defaults: { _controller: PixelBlogBundle:Blog:index, page: 1 }
+    requirements:
+        page: \d*
+
+blog_voir:
+    pattern:  /article/{id}
+    defaults: { _controller: PixelBlogBundle:Blog:voir }
+
+blog_ajouter:
+    pattern:  /ajouter
+    defaults: { _controller: PixelBlogBundle:Blog:ajouter }
+
+blog_modifier:
+    pattern:  /modifier/{id}
+    defaults: { _controller: PixelBlogBundle:Blog:modifier }
+    requirements:
+        id: \d+
+        
+blog_supprimer:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: PixelBlogBundle:Blog:supprimer}
+    requirements:
+        id: \d*

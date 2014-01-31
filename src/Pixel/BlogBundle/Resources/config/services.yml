@@ -1,0 +1,7 @@
+parameters:
+#    pixel_blog.example.class: Pixel\BlogBundle\Example
+
+services:
+#    pixel_blog.example:
+#        class: %pixel_blog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
