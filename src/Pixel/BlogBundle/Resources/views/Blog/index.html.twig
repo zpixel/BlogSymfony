@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Binevenue !</title>
-    </head>
-  <body>
-    <h1>Hello World ! </h1>
-    <p>
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. At vero eos et accusam et justo duo dolores et ea rebum.
-        <br/>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-   </p>
-  </body>
-</html>
+{% extends "PixelBlogBundle::layout.html.twig" %}
+ 
+<h1> Bienvenue sur mon blog </h1>
+
+{% block title %} Acceuil - {{ parent() }}  {% endblock %}
+    
+{% block body %}
+     {% for article in listeArticles %}
+        <article>
+            <h3> {{ article.titre }} </h3>
+            <p>  {{ article.content }} </p>
+        </article>
+    {% endfor %}
+{% endblock %}
