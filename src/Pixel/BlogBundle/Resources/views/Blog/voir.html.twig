@@ -1,0 +1,28 @@
+{% extends "PixelBlogBundle::layout.html.twig" %}
+
+{% block title %} {{ article.titre }} - {{ parent() }}  {% endblock %}
+
+{% block body %}
+    <article>
+        <h3> {{ article.titre }} </h3>
+        <div class="well">
+          {{ article.content }}
+        </div>
+        
+        <p>
+            <a href="{{ path('blog_accueil') }}" class="btn btn-info">
+                <span class="glyphicon glyphicon-chevron-left" >  </span>
+                Retour à l'accueil
+            </a>
+            <a href="{{ path('blog_modifier', {'id': article.id}) }}" class="btn btn-primary">
+                <span class="glyphicon glyphicon-edit" >  </span>
+                Modifier l'article
+            </a>
+            <a href="{{ path('blog_supprimer', {'id': article.id}) }}" class="btn btn-danger">
+                <span class="glyphicon glyphicon-trash" >  </span>
+                Supprimer l'article
+            </a>
+        </p>
+        
+    </article>
+{% endblock %}

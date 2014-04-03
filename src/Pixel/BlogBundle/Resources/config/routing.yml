@@ -5,8 +5,10 @@ blog_accueil:
         page: \d*
 
 blog_voir:
-    pattern:  /article/{id}
+    pattern:  /article/{id}-{titre}
     defaults: { _controller: PixelBlogBundle:Blog:voir }
+    requirements:
+        titre: .+
 
 blog_ajouter:
     pattern:  /ajouter

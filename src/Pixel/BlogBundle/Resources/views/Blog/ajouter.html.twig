@@ -1,0 +1,42 @@
+{% extends "PixelBlogBundle::layout.html.twig" %}
+
+{% block title %} Ajout d'un article - {{ parent() }}  {% endblock %}
+
+{% block body %}
+
+
+    <form method="post" {{ form_enctype(form) }} role="form">
+        <fieldset>
+            <legend> Ajouter un article </legend>
+        
+        {{ form_errors(form) }}
+
+        <div class="form-group">
+            {{ form_label(form.titre, "Titre de l'article") }}
+
+            {{ form_errors(form.titre) }}
+
+            {{ form_widget(form.titre,  { 'attr': {'class': 'form-control'} }) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.urlAlias, "URL") }}
+
+            {{ form_errors(form.urlAlias) }}
+
+            {{ form_widget(form.urlAlias, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.content, "Contenu de l'article") }}
+            {{ form_errors(form.content) }}
+            {{ form_widget(form.content, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+
+        {{ form_rest(form) }}
+
+            <input type="submit" class="btn btn-primary" />
+        </fieldset>
+    </form>
+    
+{% endblock %}
